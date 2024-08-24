@@ -16,3 +16,7 @@ for letter in user_input:
             ph_from_word.append(value)
 
 print(ph_from_word)
+
+  # My list+dict comprehension version of the solution 
+cp_list = [value for letter in user_input for key, value in dict_from_df.items() if key == letter]
+print(cp_list)
