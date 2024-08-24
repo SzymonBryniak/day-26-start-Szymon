@@ -1,0 +1,18 @@
+import pandas
+
+
+df = pandas.read_csv('nato_phonetic_alphabet.csv')
+dict_from_df = {row.letter: row.code for index, row in df.iterrows()}
+print(dict_from_df)
+
+
+user_input = input('Please enter a word: ').upper()
+ph_from_word = []
+print(user_input)
+
+for letter in user_input:
+    for key, value in dict_from_df.items():
+        if letter == key:
+            ph_from_word.append(value)
+
+print(ph_from_word)
